@@ -72,9 +72,10 @@ This template provides a streamlined setup for integrating a React + Tailwind ap
    ```python
    from django.apps import AppConfig
 
-   class FrontConfig(AppConfig):
+   # Update the app name
+   class YourAppNameConfig(AppConfig):  # <-- here
        default_auto_field = "django.db.models.BigAutoField"
-       name = "yourappname"
+       name = "yourappname"  # <-- and here
    ```
 
 4. Install dependencies:
