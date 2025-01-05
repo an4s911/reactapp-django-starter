@@ -13,7 +13,6 @@ dist-ssr
 *.local
 
 # django stuff
-migrations
 *.pyc
 __pycache__
 
