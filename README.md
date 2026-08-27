@@ -5,6 +5,7 @@ This template provides a streamlined setup for integrating a React + Tailwind ap
 ## Features
 
 - React for building user interfaces
+- TypeScript for type-safe code
 - Tailwind CSS for rapid styling
 - Vite for fast builds and hot module replacement
 - Seamless integration with Django
@@ -12,7 +13,7 @@ This template provides a streamlined setup for integrating a React + Tailwind ap
 ## Prerequisites
 
 - Python 3.x
-- Node.js and Yarn
+- Node.js and pnpm
 - Django
 
 ## Setup Instructions
@@ -49,9 +50,10 @@ This template provides a streamlined setup for integrating a React + Tailwind ap
    ├── manage.py
    └── yourappname/
       ├── src/
-      │   ├── App.jsx
+      │   ├── App.tsx
       │   ├── index.css
-      │   └── main.jsx
+      │   ├── main.tsx
+      │   └── vite-env.d.ts
       ├── templates/
       │   └── base.html
       ├── __init__.py
@@ -59,11 +61,12 @@ This template provides a streamlined setup for integrating a React + Tailwind ap
       ├── views.py
       ├── index.html
       ├── package.json
-      ├── vite.config.js
-      ├── tailwind.config.js
+      ├── tsconfig.json
+      ├── tsconfig.app.json
+      ├── tsconfig.node.json
+      ├── vite.config.ts
       ├── eslint.config.js
-      ├── postcss.config.js
-      ├── yarn.lock
+      ├── pnpm-lock.yaml
       └── README.md
    ```
 
@@ -82,16 +85,16 @@ This template provides a streamlined setup for integrating a React + Tailwind ap
 
    ```bash
    cd yourappname
-   yarn install
+   pnpm install
    ```
 
 5. Start the Vite build process:
 
    ```bash
-   yarn refresh
+   pnpm refresh
    ```
 
-   **Note:** For development purposes only, you can run `yarn dev` to start the Vite development server. This cannot be used alongside Django.
+   **Note:** For development purposes only, you can run `pnpm dev` to start the Vite development server. This cannot be used alongside Django.
 
 6. Add the app to your Django project in `project/settings.py`:
 
@@ -133,14 +136,14 @@ This template provides a streamlined setup for integrating a React + Tailwind ap
 ## Development Workflow
 
 1. Make changes to your React components in the `yourappname/src` directory.
-2. The Vite build process (`yarn refresh`) will automatically rebuild your app.
+2. The Vite build process (`pnpm refresh`) will automatically rebuild your app.
 3. Refresh your browser to see the changes.
 
 ## Production Deployment
 
 Before deploying to production:
 
-1. Run `yarn build` to create an optimized production build.
+1. Run `pnpm build` to create an optimized production build.
 2. Ensure `DEBUG = False` in your Django settings.
 3. Configure your web server to serve static files from the `yourappname/dist` directory.
 
